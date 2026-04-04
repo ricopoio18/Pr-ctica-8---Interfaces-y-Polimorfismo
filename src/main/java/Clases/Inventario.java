@@ -45,4 +45,18 @@ public class Inventario {
             System.out.println((i + 1) + ". " + items.get(i));
         }
     }
+    @Override
+    public String toString(){
+        if(items.isEmpty()){
+            return "Inventario vacío";
+        }
+
+        String resultado = "Inventario:\n";
+
+        for(int i = 0; i < items.size(); i++){
+            resultado += (i + 1) + ". " + items.get(i) + "\n";
+        }
+
+        return resultado;
+    }
 }
