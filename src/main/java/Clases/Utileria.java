@@ -29,7 +29,7 @@ public class Utileria implements ElementoDinamico {
         return posicionX;
     }
 
-    public int getPosicion(){
+    public int getPosicionY(){
         return posicionY;
     }
 

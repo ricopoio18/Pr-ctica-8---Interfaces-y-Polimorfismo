@@ -33,7 +33,7 @@ public class Obstaculo implements Destruible {
 
     @Override
     public void destruye(){
-
+        System.out.println(nombre + " ha sido destruido");
     }
 
 }

@@ -63,6 +63,7 @@ public class Personaje implements Destruible, ElementoDinamico {
 
     @Override
     public void destruye(){
-
+        System.out.println(nombre + " ha sido eliminado");
     }
+
 }

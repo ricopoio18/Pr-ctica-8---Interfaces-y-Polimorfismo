@@ -2,6 +2,7 @@ package Clases;
 
 import Interfaces.Inventariable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Inventario {
@@ -10,6 +11,7 @@ public class Inventario {
 
     public Inventario(int capacidadMaxima){
         this.capacidadMaxima = capacidadMaxima;
+        items = new ArrayList<Inventariable>();
     }
 
     public int getCapacidadMaxima() {
@@ -21,7 +23,12 @@ public class Inventario {
     }
 
     public boolean agregarItem(Inventariable item){
-        return items.add(item);
+        if(items.size() < capacidadMaxima){
+            return items.add(item);
+        } else {
+            System.out.println("Inventario lleno");
+            return false;
+        }
     }
 
     public boolean eliminarItem(Inventariable item){
@@ -29,9 +36,13 @@ public class Inventario {
     }
 
     public void listarItems(){
+        if(items.isEmpty()){
+            System.out.println("Inventario vacío");
+            return;
+        }
+
         for(int i = 0; i < items.size(); i++){
-            System.out.println((i + 1) + ". " + items.get(i).toString());
+            System.out.println((i + 1) + ". " + items.get(i));
         }
     }
-
 }

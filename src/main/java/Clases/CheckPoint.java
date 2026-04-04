@@ -6,7 +6,7 @@ public class CheckPoint {
     private int posicionY;
     private boolean activado;
 
-    public CheckPoint(String nombre, int posicionX, int posicionY, boolean activado) {
+    public CheckPoint(String nombre, int posicionX, int posicionY) {
         this.nombre = nombre;
         this.posicionX = posicionX;
         this.posicionY = posicionY;

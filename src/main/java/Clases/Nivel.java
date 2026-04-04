@@ -56,7 +56,7 @@ public class Nivel {
 
     public void mostrarEstado(){
         System.out.println("Nombre: "+ nombre + "\nNúmero: " + numero + "\nDificultad: " + dificultad +
-        "\nInventario: " + inventario);
+        "\nInventario: " + inventario + "CheckPoints: " + checkPoints.size() );
     }
 
 
