@@ -2,6 +2,7 @@ package Clases;
 
 import Interfaces.ElementoDinamico;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -19,6 +20,9 @@ public class Nivel {
         this.numero = numero;
         this.dificultad = dificultad;
         this.inventario = inventario;
+        this.obstaculos = new ArrayList<>();
+        this.checkPoints = new ArrayList<>();
+        this.elementosDinamicos = new ArrayList<>();
     }
 
     public String getNombre(){
