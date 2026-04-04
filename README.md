@@ -1,4 +1,4 @@
-(El siguiente archivo README.md fue realizado con la ayuda de la IA pero supervisado y corregido por el alumno.9
+(El siguiente archivo README.md fue realizado con la ayuda de la IA pero supervisado y corregido por el alumno)
 
 
 
