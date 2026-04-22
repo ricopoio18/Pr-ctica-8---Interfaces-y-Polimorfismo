@@ -23,6 +23,10 @@ public class Inventario {
     }
 
     public boolean agregarItem(Inventariable item){
+        if (item == null){
+            System.out.println("Item nulo");
+            return false;
+        }
         if(items.size() < capacidadMaxima){
             return items.add(item);
         } else {
@@ -45,6 +49,16 @@ public class Inventario {
             System.out.println((i + 1) + ". " + items.get(i));
         }
     }
+
+    public Inventariable buscarPorNombre(String nombre){
+        for (Inventariable item : items){
+            if(item.toString().toLowerCase().contains(nombre.toLowerCase())){
+                return item;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString(){
         if(items.isEmpty()){

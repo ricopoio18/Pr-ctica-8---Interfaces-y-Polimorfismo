@@ -10,7 +10,7 @@ public class CheckPoint {
         this.nombre = nombre;
         this.posicionX = posicionX;
         this.posicionY = posicionY;
-        this.activado = activado;
+        this.activado = false;
     }
 
     public String getNombre() {

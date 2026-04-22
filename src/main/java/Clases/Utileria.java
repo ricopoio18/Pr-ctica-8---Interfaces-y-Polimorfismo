@@ -36,13 +36,19 @@ public class Utileria implements ElementoDinamico {
     public boolean isUsada(){
         return usada;
     }
+
     public void usar(){
-        usada = true;
+        if (!usada) {
+            usada = true;
+            System.out.println(nombre + " ha sido usado");
+        } else {
+            System.out.println(nombre + " ya fue usado");
+        }
     }
 
     @Override
     public void mover(String direccion, int distancia){
-        switch(direccion){
+        switch(direccion.toLowerCase()){
             case "norte":
                 posicionY -= distancia;
                 break;
