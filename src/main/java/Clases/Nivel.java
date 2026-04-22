@@ -14,6 +14,9 @@ public class Nivel {
     private List<CheckPoint> checkPoints;
     private List<ElementoDinamico> elementosDinamicos;
     private Inventario inventario;
+    //Limites del ring
+    private int limiteIzquierdo = 0;
+    private int limiteDerecho = 800;
 
     public Nivel(String nombre, int numero, String dificultad,Inventario inventario){
         this.nombre = nombre;
@@ -63,5 +66,16 @@ public class Nivel {
         "\nInventario: " + inventario + "CheckPoints: " + checkPoints.size() );
     }
 
+    public void verificarFueradelRing(Personaje p1, Personaje p2) {
 
+        if (p1.getPosicionX() < limiteIzquierdo || p1.getPosicionX() > limiteDerecho) {
+            p1.destruye();
+            System.out.println(p2.getNombre() + " gana!");
+        }
+
+        if (p2.getPosicionX() < limiteIzquierdo || p2.getPosicionX() > limiteDerecho) {
+            p2.destruye();
+            System.out.println(p1.getNombre() + " gana!");
+        }
+    }
 }
