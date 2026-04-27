@@ -12,14 +12,15 @@ public class Personaje implements Destruible, ElementoDinamico {
     //Ataques
     private Arma arma;
     private long ultimoAtaque;
-    private long tiempoEspera = 2000;
+    private long tiempoEspera;
 
-    public Personaje(String nombre, int vida, int posicionX, int posicionY) {
+    public Personaje(String nombre, int vida, int posicionX, int posicionY, long tiempoEspera) {
         this.nombre = nombre;
         this.vida = vida;
         this.posicionX = posicionX;
         this.posicionY = posicionY;
         this.vivo = true;
+        this.tiempoEspera = tiempoEspera;
     }
 
     public void setArma(Arma arma) {

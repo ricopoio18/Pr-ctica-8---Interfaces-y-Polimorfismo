@@ -76,27 +76,20 @@ public class Main {
 //        checkPoint.activar();
 //        System.out.println("\nCheckpoint activado: " + checkPoint.isActivado());
 
-        Personaje jugador = new Personaje("Jugador", 100, 200, 0);
-        Personaje enemigo = new Personaje("Enemigo", 100, 600, 0);
+        Personaje jugador = new Personaje("Pelotero", 100, 100, 0,2000);
+        Personaje enemigo = new Personaje("Ciervo", 100, 500, 0, 2000);
 
-// armas (formas)
-        Arma pelotero = new Arma("Pelotero", 20, 50);
-        Arma ciervo = new Arma("Ciervo", 30, 40);
+        Arma formaInicial = new Arma("Pelotero", 20, 50);
+        Arma formaEnemigo = new Arma("Ciervo", 30, 40);
 
-        jugador.setArma(pelotero);
-        enemigo.setArma(ciervo);
+        jugador.setArma(formaInicial);
+        enemigo.setArma(formaEnemigo);
 
         Nivel nivel = new Nivel("Tronco", 1, "Normal", new Inventario(10));
 
-// simulación
-        jugador.mover("este", 10);
-        enemigo.mover("oeste", 10);
+        MotorCombate motor = new MotorCombate(jugador, enemigo, nivel);
 
-// ataque
-        jugador.atacar(enemigo);
-        enemigo.atacar(jugador);
+        motor.iniciar();
 
-// verificar ring
-        nivel.verificarFueradelRing(jugador, enemigo);
     }
 }

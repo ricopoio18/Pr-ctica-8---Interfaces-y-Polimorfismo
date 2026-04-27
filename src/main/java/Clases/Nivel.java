@@ -66,16 +66,20 @@ public class Nivel {
         "\nInventario: " + inventario + "CheckPoints: " + checkPoints.size() );
     }
 
-    public void verificarFueradelRing(Personaje p1, Personaje p2) {
+    public boolean verificarRingOut(Personaje p1, Personaje p2) {
 
         if (p1.getPosicionX() < limiteIzquierdo || p1.getPosicionX() > limiteDerecho) {
             p1.destruye();
             System.out.println(p2.getNombre() + " gana!");
+            return true;
         }
 
         if (p2.getPosicionX() < limiteIzquierdo || p2.getPosicionX() > limiteDerecho) {
             p2.destruye();
             System.out.println(p1.getNombre() + " gana!");
+            return true;
         }
+
+        return false;
     }
 }
